@@ -7,10 +7,12 @@
 //
 
 import UIKit
-import SnapKit
 
 class BookListViewController: UIViewController {
 
+    private var booksTableView: UITableView!
+    private var books: [BookItem] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
