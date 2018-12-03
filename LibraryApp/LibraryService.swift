@@ -28,4 +28,13 @@ class LibraryService {
         }
     }
     
+    func updateBookAvailebility(token: String,
+                                id: Int,
+                                newValue: Bool,
+                                complitionHandler: @escaping (Bool?) -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            complitionHandler(true)
+        }
+    }
+    
 }
