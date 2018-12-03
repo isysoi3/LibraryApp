@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class BookListViewController: UIViewController {
 
@@ -18,3 +19,6 @@ class BookListViewController: UIViewController {
 
 }
 
+extension BookListViewController: BookListViewProtocol {
+    
+}

@@ -12,6 +12,8 @@
 		D321FFA821B514E400E0D1FD /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFA721B514E400E0D1FD /* BookListViewController.swift */; };
 		D321FFAD21B514E500E0D1FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D321FFAC21B514E500E0D1FD /* Assets.xcassets */; };
 		D321FFB021B514E500E0D1FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D321FFAE21B514E500E0D1FD /* LaunchScreen.storyboard */; };
+		D321FFB821B516BB00E0D1FD /* BookListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFB721B516BB00E0D1FD /* BookListViewProtocol.swift */; };
+		D321FFBA21B516D200E0D1FD /* BookListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFB921B516D200E0D1FD /* BookListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		D321FFAC21B514E500E0D1FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D321FFAF21B514E500E0D1FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D321FFB121B514E500E0D1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D321FFB721B516BB00E0D1FD /* BookListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewProtocol.swift; sourceTree = "<group>"; };
+		D321FFB921B516D200E0D1FD /* BookListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListPresenter.swift; sourceTree = "<group>"; };
 		FFE22B12B1899486388E901E /* Pods_LibraryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,8 @@
 			children = (
 				D321FFA521B514E400E0D1FD /* AppDelegate.swift */,
 				D321FFA721B514E400E0D1FD /* BookListViewController.swift */,
+				D321FFB921B516D200E0D1FD /* BookListPresenter.swift */,
+				D321FFB721B516BB00E0D1FD /* BookListViewProtocol.swift */,
 				D321FFAC21B514E500E0D1FD /* Assets.xcassets */,
 				D321FFAE21B514E500E0D1FD /* LaunchScreen.storyboard */,
 				D321FFB121B514E500E0D1FD /* Info.plist */,
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D321FFA821B514E400E0D1FD /* BookListViewController.swift in Sources */,
+				D321FFBA21B516D200E0D1FD /* BookListPresenter.swift in Sources */,
 				D321FFA621B514E400E0D1FD /* AppDelegate.swift in Sources */,
+				D321FFB821B516BB00E0D1FD /* BookListViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
