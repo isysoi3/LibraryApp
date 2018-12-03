@@ -54,25 +54,30 @@ class BookTableViewCell: UITableViewCell {
         
         idLable.backgroundColor = .white
         idLable.textColor = .black
+        idLable.font = UIFont.boldSystemFont(ofSize: 40)
         
         nameLable.backgroundColor = .white
         nameLable.textColor = .black
+        nameLable.textAlignment = .left
+        nameLable.numberOfLines = 0
+        idLable.font = UIFont.systemFont(ofSize: 22)
         
         [idLable, nameLable, orderOrReserveButton].forEach {
             contentView.addSubview($0)
         }
         
+        nameLable.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.left.equalTo(idLable.snp.right).offset(15)
+            make.right.equalToSuperview().offset(-20)
+        }
+        
         idLable.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
+            make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(10)
         }
         
-        nameLable.snp.makeConstraints { make in
-            make.top.equalTo(idLable)
-            make.left.equalTo(idLable.snp.right).offset(10)
-            make.right.equalToSuperview().inset(10)
-        }
-        
+
         orderOrReserveButton.snp.makeConstraints { make in
             make.top.equalTo(nameLable.snp.bottom).offset(5)
             make.right.equalToSuperview().inset(10)

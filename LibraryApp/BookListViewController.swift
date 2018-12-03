@@ -12,9 +12,9 @@ import SnapKit
 class BookListViewController: UIViewController {
 
     private var booksTableView: UITableView!
-    private var books: [BookItem] = [BookItem(id: 1, name: "231", isAvailable: false),
-                                     BookItem(id: 1, name: "231", isAvailable: false),
-                                     BookItem(id: 1, name: "231", isAvailable: true)]
+    private var books: [BookItem] = [BookItem(id: 1, name: "test 231", isAvailable: false),
+                                     BookItem(id: 1, name: "test 231", isAvailable: false),
+                                     BookItem(id: 1, name: "test 231", isAvailable: true)]
     
     private let presenter = BookListPresenter()
     
