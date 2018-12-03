@@ -24,7 +24,6 @@ class BookListPresenter {
             token: "fds",
             id: id,
             newValue: newValue) { [weak self] result in
-                
                 self?.view.setActivityIndicatorVisibility(false)
                 guard let `self` = self else {
                     return
