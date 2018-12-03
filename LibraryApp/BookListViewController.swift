@@ -8,13 +8,14 @@
 
 import UIKit
 import SnapKit
+import MBProgressHUD
 
 class BookListViewController: UIViewController {
 
     private var booksTableView: UITableView!
-    private var books: [BookItem] = [BookItem(id: 1, name: "test 231", isAvailable: false),
-                                     BookItem(id: 1, name: "test 231", isAvailable: false),
-                                     BookItem(id: 1, name: "test 231", isAvailable: true)]
+    private var books: [BookItem] = []
+    
+    private var loadingIndicator: MBProgressHUD!
     
     private let presenter = BookListPresenter()
     
@@ -29,6 +30,8 @@ class BookListViewController: UIViewController {
         booksTableView.dataSource = self
         booksTableView.register(BookTableViewCell.self, forCellReuseIdentifier: "BookCell")
         booksTableView.rowHeight = UITableView.automaticDimension
+        booksTableView.tableHeaderView = UIView()
+        booksTableView.tableFooterView = UIView()
         
         view.addSubview(booksTableView)
         
@@ -71,5 +74,23 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension BookListViewController: BookListViewProtocol {
+    
+    func showError() {
+        print("error")
+    }
+    
+    func showBooks(_ books: [BookItem]) {
+        self.books = books
+        booksTableView.reloadData()
+    }
+    
+    func setActivityIndicatorVisibility(_ isVisible: Bool) {
+        if isVisible {
+            loadingIndicator = MBProgressHUD.showAdded(to: view, animated: true)
+            loadingIndicator.mode = .indeterminate
+        } else {
+            loadingIndicator.hide(animated: true)
+        }
+    }
     
 }

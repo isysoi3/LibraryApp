@@ -4,6 +4,9 @@ target 'LibraryApp' do
   use_frameworks!
 
   pod 'SnapKit'
+  pod 'MBProgressHUD'
+  #pod 'Result', '~> 3.2'
+  #pod 'Alamofire', '~> 4.5'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

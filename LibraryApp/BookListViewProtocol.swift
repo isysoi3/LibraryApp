@@ -9,5 +9,11 @@
 import Foundation
 
 protocol BookListViewProtocol: class {
+ 
+    func showError()
+    
+    func showBooks(_ books: [BookItem])
+    
+    func setActivityIndicatorVisibility(_ isVisible: Bool)
     
 }
