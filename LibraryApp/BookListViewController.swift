@@ -60,6 +60,9 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.id = bookItem.id
         cell.name = bookItem.name
         cell.isAvailebale = bookItem.isAvailable
+        cell.onActionHandler = {
+            print(bookItem.id)
+        }
         
         return cell
     }

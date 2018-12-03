@@ -41,6 +41,8 @@ class BookTableViewCell: UITableViewCell {
         }
     }
     
+    var onActionHandler: (() -> ())?
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,6 +53,10 @@ class BookTableViewCell: UITableViewCell {
         idLable = UILabel()
         nameLable = UILabel()
         orderOrReserveButton = UIButton(type: .system)
+        
+        orderOrReserveButton.addTarget(self,
+                                       action: #selector(orderOrReserveButtonOnTouch),
+                                       for: .touchUpInside)
         
         idLable.backgroundColor = .white
         idLable.textColor = .black
@@ -77,7 +83,6 @@ class BookTableViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(10)
         }
         
-
         orderOrReserveButton.snp.makeConstraints { make in
             make.top.equalTo(nameLable.snp.bottom).offset(5)
             make.right.equalToSuperview().inset(10)
@@ -88,5 +93,8 @@ class BookTableViewCell: UITableViewCell {
     }
     
     
+    @objc private func orderOrReserveButtonOnTouch(sender: UIButton) {
+        onActionHandler?()
+    }
     
 }
