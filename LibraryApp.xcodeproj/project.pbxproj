@@ -50,6 +50,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D2564221B6700400095FF1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				09D2564321B6701300095FF1 /* BookList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		09D2564321B6701300095FF1 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				D321FFC121B51BC200E0D1FD /* BookTableViewCell.swift */,
+				D321FFA721B514E400E0D1FD /* BookListViewController.swift */,
+				D321FFB921B516D200E0D1FD /* BookListPresenter.swift */,
+				D321FFB721B516BB00E0D1FD /* BookListViewProtocol.swift */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		09D2564421B6702000095FF1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D321FFC321B5451500E0D1FD /* LibraryService.swift */,
+				09D2564021B66A0000095FF1 /* TokenService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		09D2564521B6703600095FF1 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				D321FFAE21B514E500E0D1FD /* LaunchScreen.storyboard */,
+				D321FFB121B514E500E0D1FD /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		12AAB2A7B48D7814CFD12516 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,17 +125,12 @@
 		D321FFA421B514E400E0D1FD /* LibraryApp */ = {
 			isa = PBXGroup;
 			children = (
-				D321FFA521B514E400E0D1FD /* AppDelegate.swift */,
-				D321FFC121B51BC200E0D1FD /* BookTableViewCell.swift */,
-				D321FFA721B514E400E0D1FD /* BookListViewController.swift */,
-				D321FFB921B516D200E0D1FD /* BookListPresenter.swift */,
-				D321FFC321B5451500E0D1FD /* LibraryService.swift */,
-				D321FFB721B516BB00E0D1FD /* BookListViewProtocol.swift */,
 				D321FFBF21B518BD00E0D1FD /* BookItem.swift */,
+				09D2564521B6703600095FF1 /* Supporting files */,
+				09D2564421B6702000095FF1 /* Services */,
+				09D2564221B6700400095FF1 /* Screens */,
 				D321FFAC21B514E500E0D1FD /* Assets.xcassets */,
-				D321FFAE21B514E500E0D1FD /* LaunchScreen.storyboard */,
-				D321FFB121B514E500E0D1FD /* Info.plist */,
-				09D2564021B66A0000095FF1 /* TokenService.swift */,
+				D321FFA521B514E400E0D1FD /* AppDelegate.swift */,
 			);
 			path = LibraryApp;
 			sourceTree = "<group>";
