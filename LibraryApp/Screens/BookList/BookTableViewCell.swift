@@ -13,7 +13,7 @@ class BookTableViewCell: UITableViewCell {
     private var idLable: UILabel!
     private var nameLable: UILabel!
     private var authorLable: UILabel!
-    private var orderOrReserveButton: UIButton!
+    private var orderOrReturnButton: UIButton!
     
     var id: Int {
         set {
@@ -44,10 +44,10 @@ class BookTableViewCell: UITableViewCell {
     
     var isAvailebale: Bool {
         set {
-            orderOrReserveButton.setTitle(newValue ? "Order" : "Return", for: .normal)
+            orderOrReturnButton.setTitle(newValue ? "Order" : "Return", for: .normal)
         }
         get {
-            return orderOrReserveButton.titleLabel?.text == "Order"
+            return orderOrReturnButton.titleLabel?.text == "Order"
         }
     }
     
@@ -63,9 +63,9 @@ class BookTableViewCell: UITableViewCell {
         idLable = UILabel()
         nameLable = UILabel()
         authorLable = UILabel()
-        orderOrReserveButton = UIButton(type: .system)
+        orderOrReturnButton = UIButton(type: .system)
         
-        orderOrReserveButton.addTarget(self,
+        orderOrReturnButton.addTarget(self,
                                        action: #selector(orderOrReserveButtonOnTouch),
                                        for: .touchUpInside)
         
@@ -85,14 +85,25 @@ class BookTableViewCell: UITableViewCell {
         authorLable.numberOfLines = 0
         authorLable.font = UIFont.systemFont(ofSize: 22)
         
-        [idLable, nameLable, authorLable, orderOrReserveButton].forEach {
+        [idLable, nameLable, authorLable, orderOrReturnButton].forEach {
             contentView.addSubview($0)
+        }
+        
+        orderOrReturnButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-20)
+            make.size.equalTo(contentView.snp.height).multipliedBy(0.5)
+        }
+        
+        idLable.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(20)
         }
         
         nameLable.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.left.equalTo(idLable.snp.right).offset(15)
-            make.right.equalTo(orderOrReserveButton.snp.left).offset(-20)
+            make.width.equalToSuperview().multipliedBy(0.6)
         }
         
         authorLable.snp.makeConstraints { make in
@@ -101,17 +112,6 @@ class BookTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(-10)
         }
         
-        idLable.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(10)
-        }
-        
-        orderOrReserveButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().inset(10)
-            make.height.equalTo(40)
-          
-        }
         
     }
     
