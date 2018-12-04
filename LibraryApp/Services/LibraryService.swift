@@ -13,18 +13,28 @@ import enum Result.Result
 class LibraryService {
     
     private let requestBuilder = LibraryRequestBuilder()
+    private let responseParser = LibraryResponseParser()
     
     enum LibraryServiceErrorEnum: Error {
-        case invalidResponce
+        case invalidResponse
     }
     
     func getAllBooks(token: Int, complitionHandler: @escaping (Result<[BookItem], LibraryServiceErrorEnum>) -> ()) {
         let request = requestBuilder.getAllBooks(token: token)
         
-        Alamofire.request(request, method: .get).validate().responseData { data in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                complitionHandler(.success(self.books))
-            }
+        Alamofire
+            .request(request, method: .get)
+            .validate()
+            .responseData { response in
+                let data = response.data
+                let result = self.responseParser.parseAllBooksResponse(data)
+                
+                switch(result) {
+                case .success(let value):
+                    complitionHandler(.success(value))
+                case .failure:
+                     complitionHandler(.failure(.invalidResponse))
+                }
         }
     }
     
@@ -40,45 +50,20 @@ class LibraryService {
              request = requestBuilder.returnBook(token: token, bookId: id)
         }
         
-        Alamofire.request(request, method: .post).validate().responseData { data in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.books = self.books.map {
-                    if $0.id == id {
-                        return BookItem(id: $0.id, name: $0.name, author: $0.author, isAvailable: newValue)
-                    }
-                    return $0
+        Alamofire
+            .request(request, method: .post)
+            .validate()
+            .responseData { response in
+                let data = response.data
+                let result = self.responseParser.parseBookUpdateAvailability(data)
+                
+                switch(result) {
+                case .success(let value):
+                    complitionHandler(.success(value))
+                case .failure:
+                    complitionHandler(.failure(.invalidResponse))
                 }
-                complitionHandler(.success(true))
-            }
+            
         }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    var books = [BookItem(id: 1, name: "test book name 1", author: "test author name 1", isAvailable: false),
-                 BookItem(id: 2, name: "test book name 2", author: "test author name 2", isAvailable: false),
-                 BookItem(id: 3, name: "test book name 3", author: "test author name 3", isAvailable: true)]
-    
+    }
 }

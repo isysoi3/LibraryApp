@@ -11,28 +11,6 @@ import AEXML
 
 class LibraryRequestBuilder {
     
-//    <?xml version="1.0" encoding="utf-8"?>
-//    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-//    <soap:Body>
-//    <GetAllBooksResponse xmlns="http://asmx.libraryService.com/">
-//    <GetAllBooksResult>
-//    <Book>
-//    <ID>int</ID>
-//    <Name>string</Name>
-//    <AuthorName>string</AuthorName>
-//    <IsAvailable>boolean</IsAvailable>
-//    </Book>
-//    <Book>
-//    <ID>int</ID>
-//    <Name>string</Name>
-//    <AuthorName>string</AuthorName>
-//    <IsAvailable>boolean</IsAvailable>
-//    </Book>
-//    </GetAllBooksResult>
-//    </GetAllBooksResponse>
-//    </soap:Body>
-//    </soap:Envelope>
-    
     func getAllBooks(token: Int) -> String {
         let soapRequest = AEXMLDocument()
         let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance",

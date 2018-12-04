@@ -10,6 +10,7 @@
 		09D2564121B66A0000095FF1 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2564021B66A0000095FF1 /* TokenService.swift */; };
 		09D2564721B673F500095FF1 /* LibraryService.xml in Resources */ = {isa = PBXBuildFile; fileRef = 09D2564621B673F500095FF1 /* LibraryService.xml */; };
 		09D2564921B67C3F00095FF1 /* LibraryRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2564821B67C3F00095FF1 /* LibraryRequestBuilder.swift */; };
+		09D2564B21B6840100095FF1 /* LibraryResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2564A21B6840100095FF1 /* LibraryResponseParser.swift */; };
 		2E94B48F5587A73E6A0338CC /* Pods_LibraryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7787D9073E5CB1E99C435176 /* Pods_LibraryApp.framework */; };
 		D321FFA621B514E400E0D1FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFA521B514E400E0D1FD /* AppDelegate.swift */; };
 		D321FFA821B514E400E0D1FD /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFA721B514E400E0D1FD /* BookListViewController.swift */; };
@@ -27,6 +28,7 @@
 		09D2564021B66A0000095FF1 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		09D2564621B673F500095FF1 /* LibraryService.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LibraryService.xml; sourceTree = "<group>"; };
 		09D2564821B67C3F00095FF1 /* LibraryRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRequestBuilder.swift; sourceTree = "<group>"; };
+		09D2564A21B6840100095FF1 /* LibraryResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryResponseParser.swift; sourceTree = "<group>"; };
 		5D3222AA7621E9804CF81CC4 /* Pods-LibraryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryApp/Pods-LibraryApp.release.xcconfig"; sourceTree = "<group>"; };
 		7787D9073E5CB1E99C435176 /* Pods_LibraryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D321FFA221B514E400E0D1FD /* LibraryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			children = (
 				D321FFC321B5451500E0D1FD /* LibraryService.swift */,
 				09D2564821B67C3F00095FF1 /* LibraryRequestBuilder.swift */,
+				09D2564A21B6840100095FF1 /* LibraryResponseParser.swift */,
 				09D2564021B66A0000095FF1 /* TokenService.swift */,
 			);
 			path = Services;
@@ -268,6 +271,7 @@
 				D321FFC021B518BD00E0D1FD /* BookItem.swift in Sources */,
 				D321FFA621B514E400E0D1FD /* AppDelegate.swift in Sources */,
 				D321FFC221B51BC200E0D1FD /* BookTableViewCell.swift in Sources */,
+				09D2564B21B6840100095FF1 /* LibraryResponseParser.swift in Sources */,
 				09D2564121B66A0000095FF1 /* TokenService.swift in Sources */,
 				D321FFC421B5451500E0D1FD /* LibraryService.swift in Sources */,
 				D321FFB821B516BB00E0D1FD /* BookListViewProtocol.swift in Sources */,
