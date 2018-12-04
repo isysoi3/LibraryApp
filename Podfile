@@ -8,6 +8,7 @@ target 'LibraryApp' do
   pod 'Result'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'AEXML'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

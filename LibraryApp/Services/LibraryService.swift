@@ -27,7 +27,7 @@ class LibraryService {
     }
     
     
-    func updateBookAvailebility(token: Int,
+    func updateBookAvailability(token: Int,
                                 id: Int,
                                 newValue: Bool,
                                 complitionHandler: @escaping (Result<Bool, LibraryServiceErrorEnum>) -> ()) {

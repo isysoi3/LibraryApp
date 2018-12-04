@@ -38,9 +38,9 @@ class BookListPresenter {
        
     }
     
-    func updateBookAvailebility(id: Int, newValue: Bool) {
+    func updateBookAvailability(id: Int, newValue: Bool) {
         view.setActivityIndicatorVisibility(true)
-        service.updateBookAvailebility(
+        service.updateBookAvailability(
             token: token,
             id: id,
             newValue: newValue) { [weak self] result in
