@@ -12,6 +12,7 @@ struct BookItem {
     
     let id: Int
     let name: String
+    let author: String
     let isAvailable: Bool
     
 }
