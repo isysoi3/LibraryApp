@@ -62,7 +62,9 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.id = bookItem.id
         cell.name = bookItem.name
+        cell.author = bookItem.author
         cell.isAvailebale = bookItem.isAvailable
+        
         cell.onActionHandler = { [weak self] in
             self?.presenter.updateBookAvailebility(id: bookItem.id, newValue: !bookItem.isAvailable)
         }
