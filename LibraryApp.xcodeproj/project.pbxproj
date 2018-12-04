@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D2564121B66A0000095FF1 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2564021B66A0000095FF1 /* TokenService.swift */; };
+		09D2564721B673F500095FF1 /* LibraryService.xml in Resources */ = {isa = PBXBuildFile; fileRef = 09D2564621B673F500095FF1 /* LibraryService.xml */; };
 		2E94B48F5587A73E6A0338CC /* Pods_LibraryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7787D9073E5CB1E99C435176 /* Pods_LibraryApp.framework */; };
 		D321FFA621B514E400E0D1FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFA521B514E400E0D1FD /* AppDelegate.swift */; };
 		D321FFA821B514E400E0D1FD /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321FFA721B514E400E0D1FD /* BookListViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		06AC1DA6A6DE83D7A15BDAF7 /* Pods-LibraryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryApp/Pods-LibraryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		09D2564021B66A0000095FF1 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		09D2564621B673F500095FF1 /* LibraryService.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LibraryService.xml; sourceTree = "<group>"; };
 		5D3222AA7621E9804CF81CC4 /* Pods-LibraryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryApp/Pods-LibraryApp.release.xcconfig"; sourceTree = "<group>"; };
 		7787D9073E5CB1E99C435176 /* Pods_LibraryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D321FFA221B514E400E0D1FD /* LibraryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				D321FFAE21B514E500E0D1FD /* LaunchScreen.storyboard */,
-				D321FFB121B514E500E0D1FD /* Info.plist */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -130,7 +131,9 @@
 				09D2564421B6702000095FF1 /* Services */,
 				09D2564221B6700400095FF1 /* Screens */,
 				D321FFAC21B514E500E0D1FD /* Assets.xcassets */,
+				D321FFB121B514E500E0D1FD /* Info.plist */,
 				D321FFA521B514E400E0D1FD /* AppDelegate.swift */,
+				09D2564621B673F500095FF1 /* LibraryService.xml */,
 			);
 			path = LibraryApp;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				D321FFB021B514E500E0D1FD /* LaunchScreen.storyboard in Resources */,
 				D321FFAD21B514E500E0D1FD /* Assets.xcassets in Resources */,
+				09D2564721B673F500095FF1 /* LibraryService.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

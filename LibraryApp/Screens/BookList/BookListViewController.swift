@@ -76,7 +76,11 @@ extension BookListViewController: UITableViewDelegate, UITableViewDataSource {
 extension BookListViewController: BookListViewProtocol {
     
     func showError() {
-        print("error")
+        let alert = UIAlertController(title: "Error",
+                                      message: "Some error",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     func showBooks(_ books: [BookItem]) {
