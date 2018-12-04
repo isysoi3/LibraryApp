@@ -13,15 +13,35 @@ class BookListPresenter {
     private weak var view: BookListViewProtocol!
     private let service: LibraryService = LibraryService()
     
+    private var token: Int!
+    
     func onViewDidLoad(view: BookListViewProtocol) {
         self.view = view
-        getAllBooks()
+        getToken()
+    }
+    
+    func getToken() {
+        let tokenService = TokenService()
+        view.setActivityIndicatorVisibility(true)
+        tokenService.getToken { [weak self] result in
+            self?.view.setActivityIndicatorVisibility(false)
+            guard let `self` = self else {
+                return
+            }
+            guard let value = result.value else {
+                return
+            }
+            
+            self.token = value
+            self.getAllBooks()
+        }
+       
     }
     
     func updateBookAvailebility(id: Int, newValue: Bool) {
         view.setActivityIndicatorVisibility(true)
         service.updateBookAvailebility(
-            token: "fds",
+            token: token,
             id: id,
             newValue: newValue) { [weak self] result in
                 self?.view.setActivityIndicatorVisibility(false)
@@ -29,7 +49,7 @@ class BookListPresenter {
                     return
                 }
                 
-                guard let value = result else {
+                guard let value = result.value else {
                     self.view.showError()
                     return
                 }
@@ -45,13 +65,13 @@ class BookListPresenter {
     
     func getAllBooks() {
         view.setActivityIndicatorVisibility(true)
-        service.getAllBooks(token: "fs") { [weak self] result in
+        service.getAllBooks(token: token) { [weak self] result in
             self?.view.setActivityIndicatorVisibility(false)
             guard let `self` = self else {
                 return
             }
             
-            guard let value = result else {
+            guard let value = result.value else {
                 self.view.showError()
                 return
             }

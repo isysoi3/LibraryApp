@@ -7,7 +7,8 @@
 //
 
 import Foundation
-//import enum Result.Result
+import Alamofire
+import enum Result.Result
 
 class LibraryService {
     
@@ -15,25 +16,22 @@ class LibraryService {
         case invalidResponce
     }
     
-//    func getAllBooks(token: String, complitionHandler: (Result<[BookItem], LibraryServiceErrorEnum>) -> ()) {
-//
-//    }
-    
-    func getAllBooks(token: String, complitionHandler: @escaping ([BookItem]?) -> ()) {
+    func getAllBooks(token: Int, complitionHandler: @escaping (Result<[BookItem], LibraryServiceErrorEnum>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
-            complitionHandler([BookItem(id: 1, name: "test 231", isAvailable: false),
-                                BookItem(id: 1, name: "test 231", isAvailable: false),
-                                BookItem(id: 1, name: "test 231", isAvailable: true)])
+            complitionHandler(.success([BookItem(id: 1, name: "test 231", isAvailable: false),
+                               BookItem(id: 1, name: "test 231", isAvailable: false),
+                               BookItem(id: 1, name: "test 231", isAvailable: true)]))
         }
     }
     
-    func updateBookAvailebility(token: String,
+    
+    func updateBookAvailebility(token: Int,
                                 id: Int,
                                 newValue: Bool,
-                                complitionHandler: @escaping (Bool?) -> ()) {
+                                complitionHandler: @escaping (Result<Bool, LibraryServiceErrorEnum>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            complitionHandler(true)
+            complitionHandler(.success(true))
         }
     }
     

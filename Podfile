@@ -7,6 +7,7 @@ target 'LibraryApp' do
   pod 'MBProgressHUD'
   pod 'Result'
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|
