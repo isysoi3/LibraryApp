@@ -11,31 +11,65 @@ import AEXML
 
 class LibraryRequestBuilder {
     
+//    <?xml version="1.0" encoding="utf-8"?>
+//    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+//    <soap:Body>
+//    <GetAllBooksResponse xmlns="http://asmx.libraryService.com/">
+//    <GetAllBooksResult>
+//    <Book>
+//    <ID>int</ID>
+//    <Name>string</Name>
+//    <AuthorName>string</AuthorName>
+//    <IsAvailable>boolean</IsAvailable>
+//    </Book>
+//    <Book>
+//    <ID>int</ID>
+//    <Name>string</Name>
+//    <AuthorName>string</AuthorName>
+//    <IsAvailable>boolean</IsAvailable>
+//    </Book>
+//    </GetAllBooksResult>
+//    </GetAllBooksResponse>
+//    </soap:Body>
+//    </soap:Envelope>
+    
     func getAllBooks(token: Int) -> String {
-        
         let soapRequest = AEXMLDocument()
-        let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" : "http://www.w3.org/2001/XMLSchema"]
+        let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance",
+                          "xmlns:xsd" : "http://www.w3.org/2001/XMLSchema",
+                          "xmlns:soap" : "http://schemas.xmlsoap.org/soap/envelope/"]
         let envelope = soapRequest.addChild(name: "soap:Envelope", attributes: attributes)
-        envelope.addChild(name: "soap:Header")
         let body = envelope.addChild(name: "soap:Body")
-        body.addChild(name: "token", value: "\(token)")
-        
+        let getAllBooksBody = body.addChild(name: "GetAllBooks", value: nil, attributes: ["xmlns" : "http://asmx.libraryService.com/"])
+        getAllBooksBody.addChild(name: "token", value: "\(token)")
         
         return soapRequest.xml
     }
     
-    func updateBookAvailability(token: Int, bookId: Int, newValue: Bool) -> String {
-        
+    func orderBook(token: Int, bookId: Int) -> String {
         let soapRequest = AEXMLDocument()
-        let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" : "http://www.w3.org/2001/XMLSchema"]
+        let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance",
+                          "xmlns:xsd" : "http://www.w3.org/2001/XMLSchema",
+                          "xmlns:soap" : "http://schemas.xmlsoap.org/soap/envelope/"]
         let envelope = soapRequest.addChild(name: "soap:Envelope", attributes: attributes)
-        envelope.addChild(name: "soap:Header")
         let body = envelope.addChild(name: "soap:Body")
-        body.addChild(name: "token", value: "\(token)")
-        let bookItem = body.addChild(name: "book")
-        bookItem.addChild(name: "bookId", value: "\(bookId)")
-        bookItem.addChild(name: "newValue", value: "\(newValue)")
+        let orderBookBody = body.addChild(name: "OrderBook", value: nil, attributes: ["xmlns" : "http://asmx.libraryService.com/"])
+        orderBookBody.addChild(name: "token", value: "\(token)")
+        orderBookBody.addChild(name: "bookId", value: "\(bookId)")
         
+        return soapRequest.xml
+    }
+    
+    func returnBook(token: Int, bookId: Int) -> String {
+        let soapRequest = AEXMLDocument()
+        let attributes = ["xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance",
+                          "xmlns:xsd" : "http://www.w3.org/2001/XMLSchema",
+                          "xmlns:soap" : "http://schemas.xmlsoap.org/soap/envelope/"]
+        let envelope = soapRequest.addChild(name: "soap:Envelope", attributes: attributes)
+        let body = envelope.addChild(name: "soap:Body")
+        let returnBookBody = body.addChild(name: "ReturnBook", value: nil, attributes: ["xmlns" : "http://asmx.libraryService.com/"])
+        returnBookBody.addChild(name: "token", value: "\(token)")
+        returnBookBody.addChild(name: "bookId", value: "\(bookId)")
         
         return soapRequest.xml
     }
